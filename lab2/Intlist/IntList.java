@@ -100,7 +100,7 @@ public class IntList {
      * Returns a list consisting of the elements of A followed by the
      * * elements of B.  May NOT modify items of A.  Use 'new'.
      */
-    public static IntList catenateIterative(IntList A, IntList B) {
+    public static IntList catenate(IntList A, IntList B) {
         //TODO:  fill in method
         if(A==null){
             return null;
@@ -116,7 +116,7 @@ public class IntList {
         temp.rest=B;
         return re;
     }
-    public static IntList catenate(IntList A, IntList B) {
+    public static IntList catenateRecursive(IntList A, IntList B) {
         //TODO:  fill in method
         if(A.rest==null){
             return new IntList(A.first,B);
