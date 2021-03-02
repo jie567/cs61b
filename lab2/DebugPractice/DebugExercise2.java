@@ -41,7 +41,7 @@ public class DebugExercise2 {
      * a[i] and b[i]. For example, if a = {1, -10, 3}
      * and b = {0, 20, 5}, this function will return {1, 20, 5}.
      * */
-    public static int[] arrayMax(int[] a, int[] b) {
+   /* public static int[] arrayMax(int[] a, int[] b) {
         if (a.length != b.length) {
             System.out.println("ERROR! Arrays don't match");
             return null;
@@ -53,14 +53,35 @@ public class DebugExercise2 {
         }
 
         return returnArray;
+    }*/
+    public static int [] arrayMaxi(int[] a,int[] b){
+        if(a.length!=b.length){
+            System.out.println("ERROR! Arrays don't match");
+            return null;
+        }
+        int[] returnArray=new int[a.length];
+        for (int i = 0; i < a.length; i += 1) {
+            int biggerValue = a[i]>b[i]?a[i]:b[i];
+            returnArray[i]=biggerValue;
+        }
+        return returnArray;
     }
 
     /** Returns the sum of all elements in x. */
-    public static int arraySum(int[] x) {
+   /*public static int arraySum(int[] x) {
         int i = 0;
         int sum = 0;
         while (i < x.length) {
             sum = sum + add(sum, x[i]);
+            i = i + 1;
+        }
+        return sum;
+    }*/
+    public static int arraySumi(int[] x) {
+        int i = 0;
+        int sum = 0;
+        while (i < x.length) {
+            sum = sum +x[i];
             i = i + 1;
         }
         return sum;
@@ -71,8 +92,8 @@ public class DebugExercise2 {
      *  the result should be 57.
      * */
     public static int sumOfElementwiseMaxes(int[] a, int[] b) {
-        int[] maxes = arrayMax(a, b);
-        int sumofMaxes = arraySum(maxes);
+        int[] maxes = arrayMaxi(a, b);
+        int sumofMaxes = arraySumi(maxes);
         return sumofMaxes;
     }
 

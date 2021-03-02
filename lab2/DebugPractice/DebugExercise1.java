@@ -5,7 +5,8 @@
 public class DebugExercise1 {
     public static int divideThenRound(int top, int bottom) {
         int quotient = top / bottom;
-        int result = Math.round(quotient);
+        int rest=top%bottom;
+        int result = quotient+(rest>(bottom/2)?1:0);
         return result;
     }
 
@@ -13,6 +14,7 @@ public class DebugExercise1 {
         int t = 10;
         int b = 2;
         int result = divideThenRound(t, b);
+
         System.out.println("round(" + t + "/" + b + ")=" + result);
 
         int t2 = 9;
